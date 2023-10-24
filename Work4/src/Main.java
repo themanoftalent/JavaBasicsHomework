@@ -1,75 +1,64 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner tarayici = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hesap Makinesi Menüsü:");
+        System.out.println("1 - Toplama");
+        System.out.println("2 - Çıkarma");
+        System.out.println("3 - Çarpma");
+        System.out.println("4 - Bölme");
 
-        String options = "1-Addition\n" + "2-Subtraction\n" + "3-Multiplication\n" + "4-Division";
-        System.out.println(options);
+        System.out.print("Bir işlem seçin (1/2/3/4): ");
+        String secim = tarayici.nextLine();
 
-        System.out.print("Select the option: ");
-        String option = scanner.nextLine();
+        int sayi1, sayi2, sonuc;
 
-        int number1, number2, result;
-
-        switch (option){
+        switch (secim) {
             case "1":
-                System.out.print("Enter first number: ");
-                number1 = scanner.nextInt();
-
-                System.out.print("Enter second number: ");
-                number2 = scanner.nextInt();
-
-                result = number1 + number2;
-
-                System.out.print("Result: " + result);
+                System.out.print("Birinci sayıyı girin: ");
+                sayi1 = tarayici.nextInt();
+                System.out.print("İkinci sayıyı girin: ");
+                sayi2 = tarayici.nextInt();
+                sonuc = sayi1 + sayi2;
+                System.out.println("Sonuç: " + sonuc);
                 break;
 
             case "2":
-                System.out.print("Enter first number:");
-                number1 = scanner.nextInt();
-
-                System.out.print("Enter second number:");
-                number2 = scanner.nextInt();
-
-                result = number1 - number2;
-
-                System.out.print("Result: " + result);
+                System.out.print("Birinci sayıyı girin: ");
+                sayi1 = tarayici.nextInt();
+                System.out.print("İkinci sayıyı girin: ");
+                sayi2 = tarayici.nextInt();
+                sonuc = sayi1 - sayi2;
+                System.out.println("Sonuç: " + sonuc);
                 break;
 
             case "3":
-                System.out.print("Enter first number:");
-                number1 = scanner.nextInt();
-
-                System.out.print("Enter second number:");
-                number2 = scanner.nextInt();
-
-                if(number2 == 0){
-                    System.out.println("Division by zero error!");
-                    System.exit(1);
-                }
-                else{
-                    result = number1 / number2;
-
-                    System.out.print("Result: " + result);
-                }
+                System.out.print("Birinci sayıyı girin: ");
+                sayi1 = tarayici.nextInt();
+                System.out.print("İkinci sayıyı girin: ");
+                sayi2 = tarayici.nextInt();
+                sonuc = sayi1 * sayi2;
+                System.out.println("Sonuç: " + sonuc);
                 break;
 
             case "4":
-                System.out.print("Enter first number:");
-                number1 = scanner.nextInt();
+                System.out.print("Bölüneni girin: ");
+                sayi1 = tarayici.nextInt();
+                System.out.print("Böleni girin: ");
+                sayi2 = tarayici.nextInt();
 
-                System.out.print("Enter second number:");
-                number2 = scanner.nextInt();
-
-                result = number1 * number2;
-
-                System.out.print("Result: " + result);
+                if (sayi2 == 0) {
+                    System.out.println("Sıfıra bölme hatası!");
+                } else {
+                    sonuc = sayi1 / sayi2;
+                    System.out.println("Sonuç: " + sonuc);
+                }
                 break;
+
             default:
-                System.out.print("Invalid option!");
+                System.out.println("Geçersiz seçenek!");
         }
     }
 }
-
-@themanoftalent
